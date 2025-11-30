@@ -6,14 +6,14 @@
 <title>مشروع مدينة المستقبل</title>
 
 <style>
-/* ===== زر تغيير اللغة (محسّن للهاتف) ===== */
+/* ===== زر تغيير اللغة ===== */
 .lang-btn{
   position:fixed;
   top:15px;
   left:15px;
   background:#FFD56F;
   color:#000;
-  padding:8px 14px; /* أصغر للهاتف */
+  padding:8px 14px;
   border-radius:16px;
   cursor:pointer;
   font-weight:bold;
@@ -23,22 +23,12 @@
   font-size:14px;
 }
 
-@media(max-width:480px){
-  .lang-btn{
-    padding:6px 10px;
-    font-size:12px;
-    border-radius:14px;
-  }
-}
-
-/* ===== إعدادات عامة ===== */
 body{
   background:#0d0d0d;
   color:#eaeaea;
   font-family:'Tahoma', sans-serif;
   margin:0;
   padding:0;
-  overflow-x:hidden;
 }
 
 main{
@@ -49,41 +39,23 @@ main{
 
 h2,h3,h4{color:#FFD56F;}
 
-/* ===== تحسين عرض الصور ===== */
 .project-img-big{
   width:100%;
   border-radius:16px;
   object-fit:cover;
   margin:20px 0;
   max-height:330px;
-  opacity:0;
-  animation: fadeUp 1.2s ease forwards;
-  animation-delay:0.3s;
-  background:#222; /* يظهر صورة رمادية لو الصورة فاضية */
+  background:#222;
 }
 
-@media(max-width:480px){
-  .project-img-big{
-    max-height:220px; /* أصغر للهاتف */
-    border-radius:12px;
-  }
-}
-
-/* ===== صندوق القسم ===== */
 .section-box{
   background:#141414;
   border:1px solid #222;
   border-radius:18px;
   padding:20px;
   margin-bottom:35px;
-  opacity:0;
-  transform:translateY(60px) scale(0.96);
-  animation: sectionEnter 1.1s cubic-bezier(.25,.45,.25,1) forwards;
 }
 
-ul{padding-right:20px; line-height:1.9;}
-
-/* ===== فريق العمل ===== */
 .team-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(120px,1fr));
@@ -98,50 +70,20 @@ ul{padding-right:20px; line-height:1.9;}
   border:2px solid #FFD56F;
   display:block;
   margin:auto;
-  opacity:0;
-  animation: softPop 1s ease forwards;
-}
-
-/* ===== أنيميشن ===== */
-@keyframes sectionEnter {
-  0% {opacity:0; transform:translateY(60px) scale(0.95);} 
-  60% {opacity:0.8; transform:translateY(12px) scale(1.01);} 
-  100% {opacity:1; transform:translateY(0) scale(1);} 
-}
-
-@keyframes fadeUp {
-  0% {opacity:0; transform:translateY(40px);} 
-  100% {opacity:1; transform:translateY(0);} 
-}
-
-@keyframes softPop {
-  0% {opacity:0; transform:scale(0.7);} 
-  100% {opacity:1; transform:scale(1);} 
-}
-
-/* ===== hover ===== */
-.section-box{
-  transition:transform 0.35s ease, box-shadow 0.4s ease;
-}
-.section-box:hover{
-  transform:translateY(-6px) scale(1.015);
-  box-shadow:0 0 20px #ffd56f22;
 }
 </style>
 </head>
+
 <body>
 
 <button class="lang-btn" id="langButton">English</button>
 
 <main>
 
-<h2 id="title" style="text-align:center; margin-bottom:30px; animation:fadeUp 1s ease forwards;">
-مشروع مدينة المستقبل
-</h2>
+<h2 id="title">مشروع مدينة المستقبل</h2>
 
 <img src="product.jpg" class="project-img-big" alt="Future City Main Image">
 
-<!-- وصف -->
 <div class="section-box">
   <h3 id="descTitle">وصف المشروع</h3>
   <p id="descText">
@@ -150,7 +92,6 @@ ul{padding-right:20px; line-height:1.9;}
   </p>
 </div>
 
-<!-- المميزات -->
 <div class="section-box">
   <h3 id="featTitle">مميزات المدينة</h3>
   <ul id="featList">
@@ -162,7 +103,6 @@ ul{padding-right:20px; line-height:1.9;}
   </ul>
 </div>
 
-<!-- الفوائد -->
 <div class="section-box">
   <h3 id="benefTitle">فوائد المشروع</h3>
   <ul id="benefList">
@@ -173,54 +113,53 @@ ul{padding-right:20px; line-height:1.9;}
   </ul>
 </div>
 
-<!-- العناصر -->
 <div class="section-box">
   <h3 id="pointsTitle">أهم عناصر المشروع</h3>
 
   <h4 id="p1">1. تصميم ثلاثي الأبعاد واقعي</h4>
-  <img src="product.jpg" class="project-img-big" alt="3D Design">
+  <img src="product.jpg" class="project-img-big">
 
   <h4 id="p2">2. محاكاة حركة المرور الذكية</h4>
-  <img src="123.jpg" class="project-img-big" alt="Traffic Simulation">
+  <img src="123.jpg" class="project-img-big">
 
   <h4 id="p3">3. إنارة تعمل بالطاقة الشمسية</h4>
-  <img src="souler.jpg" class="project-img-big" alt="Solar Lighting">
+  <img src="souler.jpg" class="project-img-big">
 
   <h4 id="p4">4. بلاطات Piezoelectric</h4>
-  <img src="none.jpg" class="project-img-big" alt="Piezoelectric Tiles">
+  <img src="none.jpg" class="project-img-big">
 </div>
 
-<!-- الفريق -->
 <div class="section-box">
   <h3 id="teamTitle">فريق العمل</h3>
 
   <div class="team-grid">
     <div>
-      <img src="said.jpg" alt="Team Member 1">
+      <img src="said.jpg">
       <p id="m1">سعيد حمد</p>
     </div>
 
     <div>
-      <img src="khaled.jpg" alt="Team Member 2">
+      <img src="khaled.jpg">
       <p id="m2">محمد خالد</p>
     </div>
 
     <div>
-      <img src="students.jpg" alt="Team Member 3">
+      <img src="students.jpg">
       <p id="m3">حمد النعيمي</p>
     </div>
 
     <div>
-      <img src="students.jpg" alt="Team Member 4">
+      <img src="students.jpg">
       <p id="m4">محمد محمود</p>
     </div>
 
     <div>
-      <img src="students.jpg" alt="Team Member 5">
+      <img src="students.jpg">
       <p id="m5">عزيز غريب</p>
     </div>
   </div>
 </div>
+
 </main>
 
 <script>
@@ -232,8 +171,7 @@ document.getElementById("langButton").addEventListener("click", () => {
     currentLang = "en";
     document.getElementById("langButton").textContent = "العربية";
     document.documentElement.dir = "LTR";
-  }
-  else{
+  } else {
     changeToArabic();
     currentLang = "ar";
     document.getElementById("langButton").textContent = "English";
@@ -241,10 +179,14 @@ document.getElementById("langButton").addEventListener("click", () => {
   }
 });
 
+
 function changeToEnglish(){
   document.getElementById("title").textContent = "Future City Project";
+
   document.getElementById("descTitle").textContent = "Project Description";
-  document.getElementById("descText").innerHTML = `This project represents a futuristic city model that relies on clean energy and walkways equipped with <b>Piezoelectric</b> tiles that generate electricity from footsteps, in addition to naturally ventilated homes with solar panels.`;
+  document.getElementById("descText").innerHTML =
+  `This project represents a futuristic city model that relies on clean energy and walkways equipped with 
+  <b>Piezoelectric</b> tiles that generate electricity from footsteps, in addition to naturally ventilated homes with solar panels.`;
 
   document.getElementById("featTitle").textContent = "City Features";
   document.getElementById("featList").innerHTML = `
@@ -275,10 +217,15 @@ function changeToEnglish(){
   document.getElementById("m5").textContent = "Aziz Gharib";
 }
 
+
 function changeToArabic(){
   document.getElementById("title").textContent = "مشروع مدينة المستقبل";
+
   document.getElementById("descTitle").textContent = "وصف المشروع";
-  document.getElementById("descText").innerHTML = `هذا المشروع يمثل نموذجاً لمدينة مستقبلية تعتمد على الطاقة النظيفة وممرات مشاة مزودة ببلاطات <b>Piezoelectric</b> التي تولد الكهرباء من خطوات السكان، إضافة إلى منازل بتهوية طبيعية وألواح شمسية.`;
+  document.getElementById("descText").innerHTML =
+  `هذا المشروع يمثل نموذجاً لمدينة مستقبلية تعتمد على الطاقة النظيفة 
+   وممرات مشاة مزودة ببلاطات <b>Piezoelectric</b> 
+   التي تولد الكهرباء من خطوات السكان، إضافة إلى منازل بتهوية طبيعية وألواح شمسية.`;
 
   document.getElementById("featTitle").textContent = "مميزات المدينة";
   document.getElementById("featList").innerHTML = `
@@ -308,6 +255,12 @@ function changeToArabic(){
   document.getElementById("m4").textContent = "محمد محمود";
   document.getElementById("m5").textContent = "عزيز غريب";
 }
+</script>
+
+</body>
+</html>
+
+
 
 
 
