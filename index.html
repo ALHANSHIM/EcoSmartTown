@@ -7,26 +7,31 @@
 
 <style>
 
-/* ====== تصميم زر تغيير اللغة ====== */
+/* ============================= */
+/*      زر تغيير اللغة           */
+/* ============================= */
 .lang-btn{
   position:fixed;
-  top:20px;
-  left:20px;
+  top:15px;
+  left:15px;
   background:#FFD56F;
   color:#000;
-  padding:10px 18px;
+  padding:8px 16px;
   border-radius:20px;
   cursor:pointer;
   font-weight:bold;
   border:none;
   transition:0.3s;
   z-index:9999;
+  font-size:14px;
 }
 .lang-btn:hover{
   background:#ffca3a;
 }
 
-/* ===== إعدادات عامة ===== */
+/* ============================= */
+/*         التصميم العام         */
+/* ============================= */
 body{
   background:#0d0d0d;
   color:#eaeaea;
@@ -38,34 +43,34 @@ body{
 
 main{
   width:90%;
-  max-width:900px;
-  margin:50px auto;
+  max-width:850px;
+  margin:80px auto 40px;
 }
 
 h2,h3,h4{color:#FFD56F;}
 
-/* ===== صورة رئيسية ===== */
+/* صورة رئيسية */
 .project-img-big{
   width:100%;
-  max-height:350px;
+  max-height:300px;
   border-radius:16px;
   object-fit:cover;
-  margin:25px 0;
+  margin:20px 0;
   opacity:0;
   animation: fadeUp 1.2s ease forwards;
-  animation-delay:0.4s;
+  animation-delay:0.3s;
 }
 
-/* ===== صندوق القسم ===== */
+/* صندوق القسم */
 .section-box{
   background:#141414;
   border:1px solid #222;
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:40px;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:30px;
 
   opacity:0;
-  transform:translateY(60px) scale(0.97);
+  transform:translateY(40px) scale(0.97);
   animation: sectionEnter 1.1s cubic-bezier(.25,.45,.25,1) forwards;
 }
 
@@ -75,18 +80,18 @@ h2,h3,h4{color:#FFD56F;}
 .section-box:nth-child(5){animation-delay:0.65s;}
 .section-box:nth-child(6){animation-delay:0.8s;}
 
-ul{padding-right:20px; line-height:1.9;}
+ul{padding-right:20px; line-height:1.8; font-size:15px;}
 
-/* ===== فريق العمل ===== */
+/* فريق العمل */
 .team-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(130px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fill, minmax(110px,1fr));
+  gap:20px;
 }
 
 .team-grid img{
-  width:120px;
-  height:120px;
+  width:100px;
+  height:100px;
   border-radius:50%;
   object-fit:cover;
   border:2px solid #FFD56F;
@@ -99,15 +104,30 @@ ul{padding-right:20px; line-height:1.9;}
 
 .team-grid p{
   text-align:center;
-  color:#ddd;
+  color:#ccc;
   margin-top:10px;
+  font-size:14px;
 
   opacity:0;
   animation: fadeText 1.3s ease forwards;
 }
 
-/* ===== الأنيميشن ===== */
+/* ============================= */
+/*          الفوتر السفلي        */
+/* ============================= */
+.footer{
+  width:100%;
+  background:#111;
+  color:#FFD56F;
+  padding:15px;
+  text-align:center;
+  font-size:15px;
+  border-top:1px solid #444;
+}
 
+/* ============================= */
+/*           أنيميشن             */
+/* ============================= */
 @keyframes sectionEnter {
   0% {opacity:0; transform:translateY(60px) scale(0.95);}
   60% {opacity:0.8; transform:translateY(12px) scale(1.01);}
@@ -129,13 +149,58 @@ ul{padding-right:20px; line-height:1.9;}
   100% {opacity:1;}
 }
 
-/* ===== hover ===== */
+/* hover */
 .section-box{
   transition:transform 0.35s ease, box-shadow 0.4s ease;
 }
 .section-box:hover{
-  transform:translateY(-6px) scale(1.015);
-  box-shadow:0 0 20px #ffd56f22;
+  transform:translateY(-4px) scale(1.015);
+  box-shadow:0 0 15px #ffd56f22;
+}
+
+/* ============================= */
+/*        دعم الجوال (مهم)       */
+/* ============================= */
+@media(max-width:600px){
+
+  main{
+    width:94%;
+    margin-top:70px;
+  }
+
+  h2{
+    font-size:22px;
+  }
+  
+  h3{
+    font-size:18px;
+  }
+
+  .project-img-big{
+    max-height:220px;
+  }
+
+  .section-box{
+    padding:15px;
+  }
+
+  ul{
+    font-size:14px;
+  }
+
+  .team-grid{
+    grid-template-columns:repeat(auto-fill, minmax(90px,1fr));
+    gap:15px;
+  }
+
+  .team-grid img{
+    width:85px;
+    height:85px;
+  }
+
+  .footer{
+    font-size:14px;
+  }
 }
 
 </style>
@@ -147,7 +212,7 @@ ul{padding-right:20px; line-height:1.9;}
 
 <main>
 
-<h2 id="title" style="text-align:center; margin-bottom:30px; animation:fadeUp 1s ease forwards;">
+<h2 id="title" style="text-align:center; margin-bottom:20px; animation:fadeUp 1s ease forwards;">
 مشروع مدينة المستقبل
 </h2>
 
@@ -157,7 +222,7 @@ ul{padding-right:20px; line-height:1.9;}
 <div class="section-box">
   <h3 id="descTitle">وصف المشروع</h3>
   <p id="descText">
-    هذا المشروع يمثل نموذجاً لمدينة مستقبلية تعتمد على الطاقة النظيفة وممرات مشاة مزودة ببلاطات
+    هذا المشروع يمثل مدينة مستقبلية تعتمد على الطاقة النظيفة وممرات مشاة مزودة ببلاطات
     <b>Piezoelectric</b> التي تولد الكهرباء من خطوات السكان، إضافة إلى منازل بتهوية طبيعية وألواح شمسية.
   </p>
 </div>
@@ -168,9 +233,9 @@ ul{padding-right:20px; line-height:1.9;}
   <ul id="featList">
     <li>الاعتماد الكامل على الطاقة المتجددة</li>
     <li>شبكة مواصلات بدون انبعاثات</li>
-    <li>تصميم يحقق تهوية طبيعية</li>
+    <li>تهوية طبيعية</li>
     <li>خفض الضوضاء والتلوث</li>
-    <li>عمارة حديثة وصديقة للبيئة</li>
+    <li>عمارة حديثة صديقة للبيئة</li>
   </ul>
 </div>
 
@@ -178,10 +243,10 @@ ul{padding-right:20px; line-height:1.9;}
 <div class="section-box">
   <h3 id="benefTitle">فوائد المشروع</h3>
   <ul id="benefList">
-    <li>رفع جودة حياة السكان</li>
+    <li>تحسين جودة الحياة</li>
     <li>بيئة صحية ونظيفة</li>
-    <li>تقليل استهلاك الكهرباء بشكل كبير</li>
-    <li>بناء مفهوم جديد للمدن المستدامة</li>
+    <li>تقليل استهلاك الكهرباء</li>
+    <li>تحقيق مفهوم المدينة المستدامة</li>
   </ul>
 </div>
 
@@ -237,9 +302,16 @@ ul{padding-right:20px; line-height:1.9;}
 
 </main>
 
+<!-- ============================= -->
+<!-- الفوتر (اسم الطالب)          -->
+<!-- ============================= -->
+<div class="footer">
+تم تصميم هذه الصفحة بواسطة الطالب <b>محمد خالد</b>
+</div>
+
 <script>
 /* ================================
-    نظام تغيير اللغة
+    تغيير اللغة
 ================================ */
 
 let currentLang = "ar";
@@ -261,38 +333,38 @@ document.getElementById("langButton").addEventListener("click", () => {
 
 });
 
-
-/* ====== الترجمة الإنجليزية ====== */
-
 function changeToEnglish(){
+
   document.getElementById("title").textContent = "Future City Project";
   document.getElementById("descTitle").textContent = "Project Description";
+
   document.getElementById("descText").innerHTML =
-  `This project represents a futuristic city model that relies on clean energy 
-   and walkways equipped with <b>Piezoelectric</b> tiles that generate electricity from footsteps, 
-   in addition to naturally ventilated homes with solar panels.`;
+  `This project represents a futuristic smart city that relies on clean energy and 
+   <b>Piezoelectric</b> tiles that generate electricity from footsteps, as well as 
+   naturally ventilated houses with solar panels.`;
+
 
   document.getElementById("featTitle").textContent = "City Features";
   document.getElementById("featList").innerHTML = `
-    <li>Fully renewable energy</li>
+    <li>100% renewable energy</li>
     <li>Zero-emission transportation</li>
-    <li>Natural ventilation system</li>
-    <li>Reduced noise and pollution</li>
+    <li>Natural ventilation</li>
+    <li>Lower pollution and noise</li>
     <li>Modern eco-friendly architecture</li>`;
 
   document.getElementById("benefTitle").textContent = "Project Benefits";
   document.getElementById("benefList").innerHTML = `
-    <li>Improves residents' quality of life</li>
+    <li>Improves quality of life</li>
     <li>Healthy and clean environment</li>
-    <li>Large reduction in electricity consumption</li>
-    <li>A sustainable smart-city future model</li>`;
+    <li>Lower electricity consumption</li>
+    <li>Smart sustainable future concept</li>`;
 
   document.getElementById("pointsTitle").textContent = "Key Project Elements";
 
   document.getElementById("p1").textContent = "1. Realistic 3D Design";
   document.getElementById("p2").textContent = "2. Smart Traffic Simulation";
-  document.getElementById("p3").textContent = "3. Solar Powered Lighting";
-  document.getElementById("p4").textContent = "4. Piezoelectric Tiles";
+  document.getElementById("p3").textContent = "3. Solar-Powered Lighting";
+  document.getElementById("p4").textContent = "4. Piezoelectric Tile System";
 
   document.getElementById("teamTitle").textContent = "Team Members";
 
@@ -301,15 +373,15 @@ function changeToEnglish(){
   document.getElementById("m3").textContent = "Hamad Al-Nuaimi";
   document.getElementById("m4").textContent = "Mohammed Mahmoud";
   document.getElementById("m5").textContent = "Azeez Ghareeb";
+
 }
 
-/* ====== العودة للعربية ====== */
-
 function changeToArabic(){
-  location.reload(); // أبسط طريقة لإرجاع النص العربي بالكامل بدون أخطاء
+  location.reload();
 }
 
 </script>
 
 </body>
 </html>
+
