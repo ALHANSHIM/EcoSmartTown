@@ -6,24 +6,29 @@
 <title>مشروع مدينة المستقبل</title>
 
 <style>
-
-/* ====== تصميم زر تغيير اللغة ====== */
+/* ===== زر تغيير اللغة (محسّن للهاتف) ===== */
 .lang-btn{
   position:fixed;
-  top:20px;
-  left:20px;
+  top:15px;
+  left:15px;
   background:#FFD56F;
   color:#000;
-  padding:10px 18px;
-  border-radius:20px;
+  padding:8px 14px; /* أصغر للهاتف */
+  border-radius:16px;
   cursor:pointer;
   font-weight:bold;
   border:none;
   transition:0.3s;
   z-index:9999;
+  font-size:14px;
 }
-.lang-btn:hover{
-  background:#ffca3a;
+
+@media(max-width:480px){
+  .lang-btn{
+    padding:6px 10px;
+    font-size:12px;
+    border-radius:14px;
+  }
 }
 
 /* ===== إعدادات عامة ===== */
@@ -44,16 +49,24 @@ main{
 
 h2,h3,h4{color:#FFD56F;}
 
-/* ===== صورة رئيسية ===== */
+/* ===== تحسين عرض الصور ===== */
 .project-img-big{
   width:100%;
-  max-height:350px;
   border-radius:16px;
   object-fit:cover;
-  margin:25px 0;
+  margin:20px 0;
+  max-height:330px;
   opacity:0;
   animation: fadeUp 1.2s ease forwards;
-  animation-delay:0.4s;
+  animation-delay:0.3s;
+  background:#222; /* يظهر صورة رمادية لو الصورة فاضية */
+}
+
+@media(max-width:480px){
+  .project-img-big{
+    max-height:220px; /* أصغر للهاتف */
+    border-radius:12px;
+  }
 }
 
 /* ===== صندوق القسم ===== */
@@ -61,72 +74,49 @@ h2,h3,h4{color:#FFD56F;}
   background:#141414;
   border:1px solid #222;
   border-radius:18px;
-  padding:25px;
-  margin-bottom:40px;
-
+  padding:20px;
+  margin-bottom:35px;
   opacity:0;
-  transform:translateY(60px) scale(0.97);
+  transform:translateY(60px) scale(0.96);
   animation: sectionEnter 1.1s cubic-bezier(.25,.45,.25,1) forwards;
 }
-
-.section-box:nth-child(2){animation-delay:0.2s;}
-.section-box:nth-child(3){animation-delay:0.35s;}
-.section-box:nth-child(4){animation-delay:0.5s;}
-.section-box:nth-child(5){animation-delay:0.65s;}
-.section-box:nth-child(6){animation-delay:0.8s;}
 
 ul{padding-right:20px; line-height:1.9;}
 
 /* ===== فريق العمل ===== */
 .team-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(130px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fill, minmax(120px,1fr));
+  gap:20px;
 }
 
 .team-grid img{
-  width:120px;
-  height:120px;
+  width:110px;
+  height:110px;
   border-radius:50%;
   object-fit:cover;
   border:2px solid #FFD56F;
   display:block;
   margin:auto;
-
   opacity:0;
   animation: softPop 1s ease forwards;
 }
 
-.team-grid p{
-  text-align:center;
-  color:#ddd;
-  margin-top:10px;
-
-  opacity:0;
-  animation: fadeText 1.3s ease forwards;
-}
-
-/* ===== الأنيميشن ===== */
-
+/* ===== أنيميشن ===== */
 @keyframes sectionEnter {
-  0% {opacity:0; transform:translateY(60px) scale(0.95);}
-  60% {opacity:0.8; transform:translateY(12px) scale(1.01);}
-  100% {opacity:1; transform:translateY(0) scale(1);}
+  0% {opacity:0; transform:translateY(60px) scale(0.95);} 
+  60% {opacity:0.8; transform:translateY(12px) scale(1.01);} 
+  100% {opacity:1; transform:translateY(0) scale(1);} 
 }
 
 @keyframes fadeUp {
-  0% {opacity:0; transform:translateY(40px);}
-  100% {opacity:1; transform:translateY(0);}
+  0% {opacity:0; transform:translateY(40px);} 
+  100% {opacity:1; transform:translateY(0);} 
 }
 
 @keyframes softPop {
-  0% {opacity:0; transform:scale(0.7);}
-  100% {opacity:1; transform:scale(1);}
-}
-
-@keyframes fadeText {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {opacity:0; transform:scale(0.7);} 
+  100% {opacity:1; transform:scale(1);} 
 }
 
 /* ===== hover ===== */
@@ -137,12 +127,10 @@ ul{padding-right:20px; line-height:1.9;}
   transform:translateY(-6px) scale(1.015);
   box-shadow:0 0 20px #ffd56f22;
 }
-
 </style>
 </head>
 <body>
 
-<!-- زر تغيير اللغة -->
 <button class="lang-btn" id="langButton">English</button>
 
 <main>
@@ -151,7 +139,7 @@ ul{padding-right:20px; line-height:1.9;}
 مشروع مدينة المستقبل
 </h2>
 
-<img src="product.jpg" class="project-img-big">
+<img src="product.jpg" class="project-img-big" alt="Future City Main Image">
 
 <!-- وصف -->
 <div class="section-box">
@@ -190,16 +178,16 @@ ul{padding-right:20px; line-height:1.9;}
   <h3 id="pointsTitle">أهم عناصر المشروع</h3>
 
   <h4 id="p1">1. تصميم ثلاثي الأبعاد واقعي</h4>
-  <img src="product.jpg" class="project-img-big">
+  <img src="product.jpg" class="project-img-big" alt="3D Design">
 
   <h4 id="p2">2. محاكاة حركة المرور الذكية</h4>
-  <img src="123.jpg" class="project-img-big">
+  <img src="123.jpg" class="project-img-big" alt="Traffic Simulation">
 
   <h4 id="p3">3. إنارة تعمل بالطاقة الشمسية</h4>
-  <img src="souler.jpg" class="project-img-big">
+  <img src="souler.jpg" class="project-img-big" alt="Solar Lighting">
 
   <h4 id="p4">4. بلاطات Piezoelectric</h4>
-  <img src="none.jpg" class="project-img-big">
+  <img src="none.jpg" class="project-img-big" alt="Piezoelectric Tiles">
 </div>
 
 <!-- الفريق -->
@@ -208,69 +196,55 @@ ul{padding-right:20px; line-height:1.9;}
 
   <div class="team-grid">
     <div>
-      <img src="said.jpg">
+      <img src="said.jpg" alt="Team Member 1">
       <p id="m1">سعيد حمد</p>
     </div>
 
     <div>
-      <img src="khaled.jpg">
+      <img src="khaled.jpg" alt="Team Member 2">
       <p id="m2">محمد خالد</p>
     </div>
 
     <div>
-      <img src="students.jpg">
+      <img src="students.jpg" alt="Team Member 3">
       <p id="m3">حمد النعيمي</p>
     </div>
 
     <div>
-      <img src="students.jpg">
+      <img src="students.jpg" alt="Team Member 4">
       <p id="m4">محمد محمود</p>
     </div>
 
     <div>
-      <img src="students.jpg">
+      <img src="students.jpg" alt="Team Member 5">
       <p id="m5">عزيز غريب</p>
     </div>
   </div>
-
 </div>
-
 </main>
 
 <script>
-/* ================================
-    نظام تغيير اللغة
-================================ */
-
 let currentLang = "ar";
 
 document.getElementById("langButton").addEventListener("click", () => {
-  
   if(currentLang === "ar"){
     changeToEnglish();
     currentLang = "en";
     document.getElementById("langButton").textContent = "العربية";
     document.documentElement.dir = "LTR";
-  } 
-  else {
+  }
+  else{
     changeToArabic();
     currentLang = "ar";
     document.getElementById("langButton").textContent = "English";
     document.documentElement.dir = "RTL";
   }
-
 });
-
-
-/* ====== الترجمة الإنجليزية ====== */
 
 function changeToEnglish(){
   document.getElementById("title").textContent = "Future City Project";
   document.getElementById("descTitle").textContent = "Project Description";
-  document.getElementById("descText").innerHTML =
-  `This project represents a futuristic city model that relies on clean energy 
-   and walkways equipped with <b>Piezoelectric</b> tiles that generate electricity from footsteps, 
-   in addition to naturally ventilated homes with solar panels.`;
+  document.getElementById("descText").innerHTML = `This project represents a futuristic city model that relies on clean energy and walkways equipped with <b>Piezoelectric</b> tiles that generate electricity from footsteps, in addition to naturally ventilated homes with solar panels.`;
 
   document.getElementById("featTitle").textContent = "City Features";
   document.getElementById("featList").innerHTML = `
@@ -285,34 +259,18 @@ function changeToEnglish(){
     <li>Improves residents' quality of life</li>
     <li>Healthy and clean environment</li>
     <li>Large reduction in electricity consumption</li>
-    <li>A sustainable smart-city future model</li>`;
+    <li>Future sustainable city model</li>`;
 
   document.getElementById("pointsTitle").textContent = "Key Project Elements";
-
   document.getElementById("p1").textContent = "1. Realistic 3D Design";
   document.getElementById("p2").textContent = "2. Smart Traffic Simulation";
   document.getElementById("p3").textContent = "3. Solar Powered Lighting";
   document.getElementById("p4").textContent = "4. Piezoelectric Tiles";
 
   document.getElementById("teamTitle").textContent = "Team Members";
-
   document.getElementById("m1").textContent = "Saeed Hamad";
-  document.getElementById("m2").textContent = "Mohammed Khaled";
-  document.getElementById("m3").textContent = "Hamad Al-Nuaimi";
-  document.getElementById("m4").textContent = "Mohammed Mahmoud";
-  document.getElementById("m5").textContent = "Azeez Ghareeb";
-}
+  document.getElementById("m
 
-/* ====== العودة للعربية ====== */
-
-function changeToArabic(){
-  location.reload(); // أبسط طريقة لإرجاع النص العربي بالكامل بدون أخطاء
-}
-
-</script>
-
-</body>
-</html>
 
 
 
